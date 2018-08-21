@@ -59,9 +59,9 @@ public class WebConfig implements WebMvcConfigurer {
 		// Define all possible view resolvers
 		List<ViewResolver> resolvers = new ArrayList<>();
 
-		resolvers.add(pdfViewResolver());
 		resolvers.add(csvViewResolver());
 		resolvers.add(excelViewResolver());
+		resolvers.add(pdfViewResolver());
 
 		resolver.setViewResolvers(resolvers);
 		return resolver;

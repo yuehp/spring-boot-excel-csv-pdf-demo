@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import yuehp.service.UserService;
 
@@ -23,8 +24,9 @@ public class ExportController {
     /**
      * Handle request to download an Excel document
      */
-    @GetMapping("/download")
-    public String download(Model model) {
+    @GetMapping("/download{extension}")
+    public String download(Model model, @PathVariable String extension) {
+    	System.out.println("----download method----" + extension);
 
         model.addAttribute("users", userService.findAllUsers());
         return "";

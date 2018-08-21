@@ -25,13 +25,17 @@ public class UserService {
 
 
         return IntStream.rangeClosed(1, 20)
-                .mapToObj(i -> new User(appUtil.generateRandomChars(candidateChars, 10), appUtil.generateRandomChars
-                        (candidateChars, 10), appUtil.generateRandomInteger(i),
-                        appUtil.generateRandomChars(candidateChars, 15), appUtil.generateRandomChars(candidateChars,
-                        15), appUtil.generateRandomChars(candidateChars, 20),
-                        appUtil.generateRandomChars(candidateChars, 10), appUtil.generateRandomChars(candidateChars,
-                        10), appUtil.generateRandomChars(candidateNum, 10)))
-                .collect(Collectors.toList());
+                .mapToObj(i -> new User(
+                				appUtil.generateRandomChars(candidateChars, 10), 
+                				appUtil.generateRandomChars(candidateChars, 10), 
+                				appUtil.generateRandomInteger(i),
+                				appUtil.generateRandomChars(candidateChars, 15), 
+                				appUtil.generateRandomChars(candidateChars,15), 
+                				appUtil.generateRandomChars(candidateChars, 20),
+                				appUtil.generateRandomChars(candidateChars, 10), 
+                				appUtil.generateRandomChars(candidateChars,10), 
+                				appUtil.generateRandomChars(candidateNum, 10))
+                ).collect(Collectors.toList());
 
     }
 }
